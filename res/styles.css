@@ -58,7 +58,7 @@ div.nav {
     box-sizing: border-box;
 }
 
-div.nav > a, .naviactions {
+div.nav > a {
     float: left;
     display: block;
     color: black;
@@ -84,9 +84,7 @@ div.nav > a.logolink > img {
     height: 24px;
 }
 .naviactions {
-    float: right;
-    margin: 0;
-    box-shadow: none;
+    float: right !important;
 }
 
 
@@ -189,9 +187,6 @@ input[type=button]:active {
 }
 input::placeholder {
     color: #bbb;
-}
-input::-webkit-calendar-picker-indicator {
-  display: none !important;
 }
 .center {
     text-align: center;
@@ -386,6 +381,19 @@ button.pokefav {
     margin: 10px;
     filter: drop-shadow(0px 0px 12px #ac8c1d);
 }
+.detactions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.detactions button {
+    float: initial;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
 .poketype {
     border: none;
     background-color: transparent;
@@ -398,6 +406,7 @@ button.pokefav {
     font-size: inherit;
     color: inherit;
     padding: 9px 12px;
+    text-transform: capitalize;
 }
 .pokeabil {
     border: none;
@@ -411,9 +420,7 @@ button.pokefav {
     font-size: inherit;
     color: inherit;
     padding: 9px 12px;
-}
-.detactions {
-    margin-top: 4px;
+    text-transform: capitalize;
 }
 #closedetails {
     float: right;

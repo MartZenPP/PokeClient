@@ -5,35 +5,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="res/styles.css">
-        <link rel="manifest" href="manifest.json">
-        <link rel="icon" href="ball.png">
         <script src="res/script.js"></script>
     </head>
     <body onload="init();">
         <div class="nav">
-            <a href="index.html" class="logolink">
+            <a href="." class="logolink">
                 <img src="poke.svg">
             </a>
-            <!--<a href="favoritos.html">Favoritos</a>
-            <a href="ajustes.html">Ajustes</a>
-            <a href="gpscopay.html" title="Encuentra tu servicio Copay urbano con este mapa en tiempo real.">GPS Copay</a>-->
+            <a class="naviactions" onclick="eliminarFavoritos()">Eliminar favoritos</a>
+            <a class="naviactions" onclick="eliminarHistorial()">Eliminar búsquedas</a>
+            <a href="gpscopay.html" title="Encuentra tu servicio Copay urbano con este mapa en tiempo real.">GPS Copay</a>
         </div>
         <div class="content center">
             <img src="poke.svg">
             <br>
+            Pokédex
             <br>
+            <br>
+            <form id="searchform" autocomplete="off">
             <input type="text" id="search" placeholder="Buscar por ID o nombre" list="searchhistory">
             <datalist id="searchhistory">
-                <option value="Bulbasaur"></option>
             </datalist>
-            <input type="button" id="searchbutton" value="Buscar">
-            <br>
+            <input type="submit" id="searchbutton" value="Buscar">
+            </form>
             <p id="searchstatus"></p>
             <div id="results"></div>
             <input type="button" onclick="cargarMas()" value="Mostrar más">
         </div>
-        <dialog id="pokedetails">
+        <dialog id="pokedetails" data-id="1">
             <div id="pokedetailsdialog">
+                <div class="detactions">
+                    <button id="botonfavdialog" class="material-symbols-outlined icononofill" onclick="botonFavDialog(this)" title="Favorito">star</button>
+                    <button class="material-symbols-outlined iconofill" onclick="cerrarDialog()" title="Cerrar">close</button>
+                </div>
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" id="pokedetailsimg">
                 <h2 id="pokedetailsname">Bulbasaur</h2>
                 <table>
@@ -43,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>Altura</td>
-                        <td id="pokedetht">0.7m</td>
+                        <td id="pokedetht">0.7 m</td>
                     </tr>
                     <tr>
                         <td>Peso</td>
@@ -52,17 +56,13 @@
                 </table>
                 <h2 class="pokedetailshead">Tipos</h2>
                 <div id="poketypes">
-                    <span class="poketype">Grass</span>
-                    <span class="poketype">Poison</span>
+                    <span class="poketype">grass</span>
+                    <span class="poketype">poison</span>
                 </div>
                 <h2 class="pokedetailshead">Habilidades</h2>
                 <div id="pokeabils">
-                    <span class="pokeabil">Overgrow</span>
-                    <span class="pokeabil">Chlorophyll</span>
-                </div>
-                <div class="detactions">
-                    <input type="button" id="closedetails" value="Cerrar">
-                    <!--<input type="button" id="favdetails" value="Marcar como favorito">-->
+                    <span class="pokeabil">overgrow</span>
+                    <span class="pokeabil">chlorophyll</span>
                 </div>
             </div>
         </dialog>
