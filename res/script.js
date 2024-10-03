@@ -111,7 +111,7 @@ function abrirDetalles(id) {
         document.getElementById("pokedetails").dataset.id = id;
         document.getElementById("botonfavdialog").className = "material-symbols-outlined " + (favorito.includes(id) ? "iconofill" : "icononofill");
         document.getElementById("pokedetailsimg").src = rutaImagenes + id + ".png";
-        document.getElementById("pokedetailsname").innerText = res.name.charAt(0).toUpperCase() + res.name.slice(1);
+        document.getElementById("pokedetailsname").innerText = res.name.replace('-', ' ');
         document.getElementById("pokedetxp").innerText = res.base_experience + " XP";
         document.getElementById("pokedetwt").innerText = (res.weight / 10) + " kg";
         document.getElementById("pokedetht").innerText = (res.height / 10) + " m";
