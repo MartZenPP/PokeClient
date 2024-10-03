@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplicación de Pokemones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="res/styles.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" href="ball.png">
+        <script src="res/script.js"></script>
+    </head>
+    <body onload="cargarPokemon();">
+        <div class="nav">
+            <a href="index.html" class="logolink">
+                <img src="poke.svg">
+            </a>
+            <a href="favoritos.html">Favoritos</a>
+            <a href="ajustes.html">Ajustes</a>
+            <a href="gpscopay.html" title="Encuentra tu servicio Copay urbano con este mapa en tiempo real.">GPS Copay</a>
+        </div>
+        <div class="content center">
+            <img src="poke.svg">
+            <br>
+            <br>
+            <input type="text" id="search" placeholder="Buscar por ID o nombre">
+            <input type="button" id="searchbutton" value="Buscar">
+            <br>
+            <p id="searchstatus"></p>
+            <div id="results">
+            </div>
+            <input type="button" onclick="cargarMas()" value="Mostrar más">
+        </div>
+    </body>
+</html>
